@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Thank You 感謝支持</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&display=swap" rel="stylesheet">
+
 <style>
 body{
     margin:0;
@@ -32,17 +33,49 @@ h2{
     margin-bottom:35px;
 }
 
+/* ✅ BIGGER GALLERY (2 columns desktop) */
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 25px;
 }
 
 .gallery img {
     width: 100%;
-    height: 220px;          /* control height here */
-    object-fit: cover;      /* crop nicely */
-    border-radius: 12px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 15px;
+    cursor:pointer;
+    transition: transform 0.3s ease;
+}
+
+.gallery img:hover{
+    transform: scale(1.03);
+}
+
+/* ✅ LIGHTBOX */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+}
+
+.lightbox img {
+    display: block;
+    margin: auto;
+    max-width: 90%;
+    max-height: 85%;
+    border-radius: 15px;
+}
+
+.lightbox:target {
+    display: block;
 }
 
 .card{
@@ -53,27 +86,21 @@ h2{
     margin-bottom:30px;
 }
 
-.video-link{
-    display:block;
-    text-decoration:none;
-    background:white;
-    padding:25px;
+/* ✅ VIDEO GRID */
+.video-card{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap:25px;
+}
+
+.video-card img{
+    width:100%;
     border-radius:15px;
-    box-shadow:0 8px 25px rgba(0,0,0,0.08);
-    margin-bottom:20px;
     transition:0.3s;
-    color:#333;
 }
 
-.video-link:hover{
-    transform:translateY(-5px);
-    box-shadow:0 15px 35px rgba(0,0,0,0.12);
-}
-
-.video-title{
-    font-weight:600;
-    color:#2a5298;
-    margin-bottom:5px;
+.video-card img:hover{
+    transform:scale(1.03);
 }
 
 footer{
@@ -82,7 +109,6 @@ footer{
     text-align:center;
     padding:30px;
 }
-
 </style>
 </head>
 
@@ -91,97 +117,80 @@ footer{
 <header>
     <h1>Thank you to all teachers, family, and friends for your continuous support</h1>
     <p>衷心感謝老師、家人及朋友一直以來的支持與鼓勵</p>
-
-
-
 </header>
 
 <section>
     <h2>🏆 Competition Achievements 比賽成果</h2>
     <div class="card">
         <p><strong>IYSEC 2026 國際青少年創科教育大賽</strong></p>
-                <p>🥈 人工智能應用賽（高小組）亞軍</p>
         <p>🥈 數碼藝術 – 未來社會與AI（高小組）亞軍</p>
         <p>⭐ 數碼藝術 – 廟宇與中國文化（高小組）優異獎</p>
-
+        <p>🥈 人工智能應用賽（高小組）亞軍</p>
     </div>
 </section>
 
 <section>
-    <h2>🎨 Project Showcase 作品展示</h2>
+<h2>🎨 Project Showcase 作品展示</h2>
 
-    <div class="gallery">
-        <!-- Replace with your real photos -->
-         <img src=" https://res.cloudinary.com/dybcck9mk/image/upload/v1784367450/3_iawa7j.jpg" alt="Results">
-            
-        <img src="https://res.cloudinary.com/dybcck9mk/image/upload/v1784356716/4_tmfjfs.jpg" alt="Competition Day">
-        <img src="https://res.cloudinary.com/dybcck9mk/image/upload/v1784367441/1_ytoqn8.jpg" alt="Results">
-                
-        <img src="https://res.cloudinary.com/dybcck9mk/image/upload/v1782664443/Picture1_rvkodr.jpg" alt="Artwork">
-                
-        <img src="https://res.cloudinary.com/dybcck9mk/image/upload/v1784356737/7_j3yamc.jpg" alt="Competition Day">
-        <img src="https://res.cloudinary.com/dybcck9mk/image/upload/v1784367445/2_qcvm1c.jpg" alt="Results">
-        
-        <img src="https://res.cloudinary.com/dybcck9mk/image/upload/v1782664452/Picture2_egizkj.jpg" alt="Artwork">
+<div class="gallery">
+    <a href="#img1"><img src="https://res.cloudinary.com/dybcck9mk/image/upload/v1784367450/3_iawa7j.jpg"></a>
+    <a href="#img8"><img src="https://res.cloudinary.com/dybcck9mk/image/upload/v1784356716/4_tmfjfs.jpg"></a>
 
+    <a href="#img2"><img src="https://res.cloudinary.com/dybcck9mk/image/upload/v1784367441/1_ytoqn8.jpg"></a>
+    <a href="#img5"><img src="https://res.cloudinary.com/dybcck9mk/image/upload/v1782664443/Picture1_rvkodr.jpg"></a>
+    <a href="#img6"><img src="https://res.cloudinary.com/dybcck9mk/image/upload/v1784356737/7_j3yamc.jpg"></a>
 
-        <img src="https://res.cloudinary.com/dybcck9mk/image/upload/v1784356700/8_irnjbh.jpg" alt="Competition Day">
-
-
-        
-    </div>
-</section>
-
-
-<section>
-    <h2>🎥 Presentation Videos 簡報影片</h2>
-
-<div class="video-card">
-    <h3>Digital Art – Future Society & AI</h3>
-    
-    <a href="https://www.youtube.com/watch?v=nSq6kSDObe8" target="_blank">
-        <img src="https://img.youtube.com/vi/nSq6kSDObe8/maxresdefault.jpg" 
-             alt="YouTube Video Preview" 
-             style="width:100%; border-radius:12px;">
-    </a>
-
-
-    <a href="https://www.youtube.com/watch?v=FI-RXc6kbKE" target="_blank">
-        <img src="https://img.youtube.com/vi/FI-RXc6kbKE/maxresdefault.jpg" 
-             alt="YouTube Video Preview" 
-             style="width:100%; border-radius:12px;">
-    </a>
-
-    <a href="https://youtube.com/shorts/4E4fZKCLgWA" target="_blank">
-        <img src="https://img.youtube.com/vi/4E4fZKCLgWA/maxresdefault.jpg" 
-             alt="YouTube Video Preview" 
-             style="width:100%; border-radius:12px;">
-    </a>
+    <a href="#img3"><img src="https://res.cloudinary.com/dybcck9mk/image/upload/v1784367445/2_qcvm1c.jpg"></a>
+    <a href="#img4"><img src="https://res.cloudinary.com/dybcck9mk/image/upload/v1782664452/Picture2_egizkj.jpg"></a>
+    <a href="#img7"><img src="https://res.cloudinary.com/dybcck9mk/image/upload/v1784356700/8_irnjbh.jpg"></a>
 
 </div>
 
+<!-- Lightbox -->
+<div id="img1" class="lightbox"><a href="#"><img src="https://res.cloudinary.com/dybcck9mk/image/upload/v1784367450/3_iawa7j.jpg"></a></div>
+<div id="img8" class="lightbox"><a href="#"><img src="https://res.cloudinary.com/dybcck9mk/image/upload/v1784356716/4_tmfjfs.jpg"></a></div>
 
+<div id="img2" class="lightbox"><a href="#"><img src="https://res.cloudinary.com/dybcck9mk/image/upload/v1784367441/1_ytoqn8.jpg"></a></div>
+<div id="img5" class="lightbox"><a href="#"><img src="https://res.cloudinary.com/dybcck9mk/image/upload/v1782664443/Picture1_rvkodr.jpg"></a></div>
+<div id="img6" class="lightbox"><a href="#"><img src="https://res.cloudinary.com/dybcck9mk/image/upload/v1784356737/7_j3yamc.jpg"></a></div>
 
+<div id="img3" class="lightbox"><a href="#"><img src="https://res.cloudinary.com/dybcck9mk/image/upload/v1784367445/2_qcvm1c.jpg"></a></div>
+<div id="img4" class="lightbox"><a href="#"><img src="https://res.cloudinary.com/dybcck9mk/image/upload/v1782664452/Picture2_egizkj.jpg"></a></div>
+<div id="img7" class="lightbox"><a href="#"><img src="https://res.cloudinary.com/dybcck9mk/image/upload/v1784356700/8_irnjbh.jpg"></a></div>
 
 
 </section>
 
 <section>
-    <h2>💙 Message of Gratitude 感謝的話</h2>
-    <div class="card">
-        <p>
-        Thank you teachers for your dedicated guidance and inspiration.  
-        感謝老師悉心教導與啟發。
-        </p>
-        <p>
-        Thank you family and friends for your continuous encouragement and support.  
-        感謝家人及朋友一直以來的支持與陪伴。
-        </p>
-        <p>
-        Your belief makes every achievement possible.  
-        因為有您們的支持，才有今天的成果。
-        </p>
-    </div>
+<h2>🎥 Presentation Videos 簡報影片</h2>
+
+<div class="video-card">
+    <a href="https://www.youtube.com/watch?v=nSq6kSDObe8" target="_blank">
+        <img src="https://img.youtube.com/vi/nSq6kSDObe8/maxresdefault.jpg">
+    </a>
+
+    <a href="https://www.youtube.com/watch?v=FI-RXc6kbKE" target="_blank">
+        <img src="https://img.youtube.com/vi/FI-RXc6kbKE/maxresdefault.jpg">
+    </a>
+
+    <a href="https://youtube.com/shorts/4E4fZKCLgWA" target="_blank">
+        <img src="https://img.youtube.com/vi/4E4fZKCLgWA/maxresdefault.jpg">
+    </a>
+</div>
+</section>
+
+<section>
+<h2>💙 Message of Gratitude 感謝的話</h2>
+<div class="card">
+    <p>Thank you teachers for your dedicated guidance and inspiration.<br>
+    感謝老師悉心教導與啟發。</p>
+
+    <p>Thank you family and friends for your continuous encouragement and support.<br>
+    感謝家人及朋友一直以來的支持與陪伴。</p>
+
+    <p>Your belief makes every achievement possible.<br>
+    因為有您們的支持，才有今天的成果。</p>
+</div>
 </section>
 
 <footer>
